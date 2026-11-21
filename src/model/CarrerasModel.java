@@ -4,10 +4,6 @@
  */
 package model;
 
-/**
- *
- * @author jeremydevon
- */
 public class CarrerasModel {
     
 }
