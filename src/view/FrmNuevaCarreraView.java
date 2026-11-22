@@ -28,21 +28,175 @@ public class FrmNuevaCarreraView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        lblIconUTN = new javax.swing.JLabel();
+        btnCancelar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblIconUTN1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtIdCarrera = new javax.swing.JTextField();
+        txtNomCarrera = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        cmbGrado = new javax.swing.JComboBox<>();
+        btnLimpiar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnCancelar1 = new javax.swing.JButton();
+
+        lblIconUTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/UTNIcon.png"))); // NOI18N
+
+        btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelar.setForeground(new java.awt.Color(0, 0, 0));
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelarIcon.png"))); // NOI18N
+        btnCancelar.setText("Cancelar");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Datos de Carrera");
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(227, 241, 239));
+
+        jLabel1.setText("Datos de la carrera");
+        jLabel1.setFont(new java.awt.Font("Noto Sans Medium", 0, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(36, 55, 59));
+
+        lblIconUTN1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/UTNIcon.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, Short.MAX_VALUE)
+                .addComponent(lblIconUTN1))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addComponent(lblIconUTN1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(17, 17, 17))
+        );
+
+        jLabel2.setText("ID Carrera");
+        jLabel2.setFont(new java.awt.Font("Noto Sans Medium", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtIdCarrera.setBackground(new java.awt.Color(255, 255, 255));
+        txtIdCarrera.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+        txtIdCarrera.addActionListener(this::txtIdCarreraActionPerformed);
+
+        txtNomCarrera.setBackground(new java.awt.Color(255, 255, 255));
+        txtNomCarrera.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+        txtNomCarrera.addActionListener(this::txtNomCarreraActionPerformed);
+
+        jLabel3.setFont(new java.awt.Font("Noto Sans Medium", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Nombre de la carrera");
+
+        jLabel4.setFont(new java.awt.Font("Noto Sans Medium", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Grado");
+
+        cmbGrado.setBackground(new java.awt.Color(255, 255, 255));
+        cmbGrado.setForeground(new java.awt.Color(0, 0, 0));
+        cmbGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diplomado", "Bachiller", "Maestría" }));
+
+        btnLimpiar.setBackground(new java.awt.Color(255, 255, 255));
+        btnLimpiar.setForeground(new java.awt.Color(0, 0, 0));
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/limpiarIcon.png"))); // NOI18N
+        btnLimpiar.setText("Limpiar");
+
+        btnGuardar.setBackground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setForeground(new java.awt.Color(0, 0, 0));
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/GuardarIcon.png"))); // NOI18N
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(this::btnGuardarActionPerformed);
+
+        btnCancelar1.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelar1.setForeground(new java.awt.Color(0, 0, 0));
+        btnCancelar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelarIcon.png"))); // NOI18N
+        btnCancelar1.setText("Cancelar");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNomCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnLimpiar)
+                            .addComponent(cmbGrado, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnGuardar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCancelar1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtIdCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNomCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cmbGrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelar1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtIdCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdCarreraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdCarreraActionPerformed
+
+    private void txtNomCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomCarreraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomCarreraActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +224,20 @@ public class FrmNuevaCarreraView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCancelar1;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JComboBox<String> cmbGrado;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblIconUTN;
+    private javax.swing.JLabel lblIconUTN1;
+    private javax.swing.JTextField txtIdCarrera;
+    private javax.swing.JTextField txtNomCarrera;
     // End of variables declaration//GEN-END:variables
 }

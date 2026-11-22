@@ -40,12 +40,12 @@ public class FrmCarreraView extends javax.swing.JDialog {
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblEstudiantes = new javax.swing.JTable();
+        tblCarreras = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         txtRegs = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Gestión de Pacientes");
+        setTitle("Carreras");
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -111,8 +111,8 @@ public class FrmCarreraView extends javax.swing.JDialog {
                 .addGap(30, 30, 30))
         );
 
-        tblEstudiantes.setBackground(new java.awt.Color(227, 241, 239));
-        tblEstudiantes.setModel(new javax.swing.table.DefaultTableModel(
+        tblCarreras.setBackground(new java.awt.Color(227, 241, 239));
+        tblCarreras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -120,9 +120,9 @@ public class FrmCarreraView extends javax.swing.JDialog {
 
             }
         ));
-        tblEstudiantes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        tblEstudiantes.setUpdateSelectionOnSort(false);
-        jScrollPane1.setViewportView(tblEstudiantes);
+        tblCarreras.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblCarreras.setUpdateSelectionOnSort(false);
+        jScrollPane1.setViewportView(tblCarreras);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Cantidad de registros:");
@@ -232,7 +232,7 @@ public class FrmCarreraView extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBuscar;
-    public javax.swing.JTable tblEstudiantes;
+    public javax.swing.JTable tblCarreras;
     public javax.swing.JTextField txtBuscar;
     public javax.swing.JTextField txtRegs;
     // End of variables declaration//GEN-END:variables

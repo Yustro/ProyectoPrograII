@@ -46,7 +46,7 @@ public class FrmEstudianteView extends javax.swing.JDialog {
         txtRegs = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Gestión de Pacientes");
+        setTitle("Estudiantes");
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
