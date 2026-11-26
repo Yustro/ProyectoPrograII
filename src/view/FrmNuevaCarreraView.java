@@ -240,4 +240,28 @@ public class FrmNuevaCarreraView extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdCarrera;
     private javax.swing.JTextField txtNomCarrera;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JTextField getTxtIdCarrera() {
+        return txtIdCarrera;
+    }
+
+    public javax.swing.JTextField getTxtNomCarrera() {
+        return txtNomCarrera;
+    }
+
+    public javax.swing.JComboBox<String> getCmbGrado() {
+        return cmbGrado;
+    }
+
+    public javax.swing.JButton getBtnLimpiar() {
+        return btnLimpiar;
+    }
+
+    public javax.swing.JButton getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public javax.swing.JButton getBtnCancelar() {
+        return btnCancelar1;
+    }
 }

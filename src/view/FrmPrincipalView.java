@@ -12,11 +12,51 @@ public class FrmPrincipalView extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmPrincipalView.class.getName());
 
+    private javax.swing.JMenuItem mniAsignarBeneficios;
+    private javax.swing.JMenuItem mniPagosMensuales;
+    private javax.swing.JMenuItem mniSalir;
+
     /**
      * Creates new form FrmPrincipalView
      */
     public FrmPrincipalView() {
         initComponents();
+        configurarBarraMenu();
+    }
+
+    private javax.swing.ImageIcon escalarIcono(String ruta) {
+        java.net.URL url = getClass().getResource(ruta);
+        if (url == null) {
+            return null;
+        }
+        java.awt.Image img = new javax.swing.ImageIcon(url).getImage()
+                .getScaledInstance(18, 18, java.awt.Image.SCALE_SMOOTH);
+        return new javax.swing.ImageIcon(img);
+    }
+
+    private void configurarBarraMenu() {
+        mniEstudiantes.setIcon(escalarIcono("/img/iconEstudiante.png"));
+        mniCarreras.setIcon(escalarIcono("/img/CarrerasiIcon.png"));
+        mniBeneficios.setIcon(escalarIcono("/img/BeneficiosIcon.png"));
+        mnuGestion.insertSeparator(1);
+        mnuGestion.insertSeparator(3);
+
+        mniAsignarBeneficios = new javax.swing.JMenuItem("Asignar beneficios", escalarIcono("/img/AddBeneficioIcon.png"));
+        mniAsignarBeneficios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+                java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+
+        mniPagosMensuales = new javax.swing.JMenuItem("Pagos mensuales", escalarIcono("/img/calendarioIcon.png"));
+        mniPagosMensuales.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+                java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+
+        mnuProcesos.add(mniAsignarBeneficios);
+        mnuProcesos.addSeparator();
+        mnuProcesos.add(mniPagosMensuales);
+
+        mniSalir = new javax.swing.JMenuItem("Salir", escalarIcono("/img/cerrarIcon.png"));
+        mniSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+                java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mnuSistema.add(mniSalir);
     }
 
     /**
@@ -31,18 +71,19 @@ public class FrmPrincipalView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnBeneficios = new javax.swing.JButton();
         btnCarreras = new javax.swing.JButton();
-        btnEstudiantes1 = new javax.swing.JButton();
+        btnEstudiantes = new javax.swing.JButton();
         btnPagosMensuales = new javax.swing.JButton();
         btnAsignarBeneficios = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        lblIconUTN = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        mnuGestion = new javax.swing.JMenu();
+        mniEstudiantes = new javax.swing.JMenuItem();
+        mniCarreras = new javax.swing.JMenuItem();
+        mniBeneficios = new javax.swing.JMenuItem();
+        mnuProcesos = new javax.swing.JMenu();
+        mnuSistema = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,14 +109,14 @@ public class FrmPrincipalView extends javax.swing.JFrame {
         btnCarreras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnCarreras.addActionListener(this::btnCarrerasActionPerformed);
 
-        btnEstudiantes1.setBackground(new java.awt.Color(255, 255, 255));
-        btnEstudiantes1.setFont(new java.awt.Font("Noto Sans Medium", 0, 14)); // NOI18N
-        btnEstudiantes1.setForeground(new java.awt.Color(36, 55, 59));
-        btnEstudiantes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconEstudiante.png"))); // NOI18N
-        btnEstudiantes1.setText("Estudiantes");
-        btnEstudiantes1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(202, 215, 217)));
-        btnEstudiantes1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnEstudiantes1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnEstudiantes.setBackground(new java.awt.Color(255, 255, 255));
+        btnEstudiantes.setFont(new java.awt.Font("Noto Sans Medium", 0, 14)); // NOI18N
+        btnEstudiantes.setForeground(new java.awt.Color(36, 55, 59));
+        btnEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconEstudiante.png"))); // NOI18N
+        btnEstudiantes.setText("Estudiantes");
+        btnEstudiantes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(202, 215, 217)));
+        btnEstudiantes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEstudiantes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         btnPagosMensuales.setBackground(new java.awt.Color(255, 255, 255));
         btnPagosMensuales.setFont(new java.awt.Font("Noto Sans Medium", 0, 14)); // NOI18N
@@ -109,6 +150,8 @@ public class FrmPrincipalView extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
+        lblIconUTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/UTNIcon.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -116,64 +159,71 @@ public class FrmPrincipalView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnEstudiantes1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)
-                        .addComponent(btnCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)
-                        .addComponent(btnBeneficios, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)
-                        .addComponent(btnAsignarBeneficios, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)
-                        .addComponent(btnPagosMensuales, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)
+                                .addComponent(btnCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)
+                                .addComponent(btnBeneficios, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)
+                                .addComponent(btnAsignarBeneficios, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)
+                                .addComponent(btnPagosMensuales, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(24, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblIconUTN))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIconUTN, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEstudiantes1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPagosMensuales, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnBeneficios, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnAsignarBeneficios, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnPagosMensuales, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addComponent(btnAsignarBeneficios, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(242, 245, 245));
         jMenuBar1.setForeground(new java.awt.Color(0, 0, 0));
         jMenuBar1.setFont(new java.awt.Font("Noto Sans Medium", 0, 13)); // NOI18N
 
-        jMenu1.setText("Gestión");
+        mnuGestion.setText("Gestión");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem1.setText("Estudiantes");
-        jMenuItem1.addActionListener(this::jMenuItem1ActionPerformed);
-        jMenu1.add(jMenuItem1);
+        mniEstudiantes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mniEstudiantes.setText("Estudiantes");
+        mniEstudiantes.addActionListener(this::mniEstudiantesActionPerformed);
+        mnuGestion.add(mniEstudiantes);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem2.setText("Carreras");
-        jMenu1.add(jMenuItem2);
+        mniCarreras.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mniCarreras.setText("Carreras");
+        mnuGestion.add(mniCarreras);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setText("Beneficios");
-        jMenu1.add(jMenuItem3);
+        mniBeneficios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mniBeneficios.setText("Beneficios");
+        mnuGestion.add(mniBeneficios);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(mnuGestion);
 
-        jMenu2.setText("Procesos");
-        jMenuBar1.add(jMenu2);
+        mnuProcesos.setText("Procesos");
+        jMenuBar1.add(mnuProcesos);
 
-        jMenu3.setText("Sistema");
-        jMenuBar1.add(jMenu3);
+        mnuSistema.setText("Sistema");
+        jMenuBar1.add(mnuSistema);
 
         setJMenuBar(jMenuBar1);
 
@@ -211,9 +261,9 @@ public class FrmPrincipalView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void mniEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniEstudiantesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_mniEstudiantesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,17 +294,62 @@ public class FrmPrincipalView extends javax.swing.JFrame {
     private javax.swing.JButton btnAsignarBeneficios;
     private javax.swing.JButton btnBeneficios;
     private javax.swing.JButton btnCarreras;
-    private javax.swing.JButton btnEstudiantes1;
+    private javax.swing.JButton btnEstudiantes;
     private javax.swing.JButton btnPagosMensuales;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblIconUTN;
+    private javax.swing.JMenuItem mniBeneficios;
+    private javax.swing.JMenuItem mniCarreras;
+    private javax.swing.JMenuItem mniEstudiantes;
+    private javax.swing.JMenu mnuGestion;
+    private javax.swing.JMenu mnuProcesos;
+    private javax.swing.JMenu mnuSistema;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getBtnEstudiantes() {
+        return btnEstudiantes;
+    }
+
+    public javax.swing.JButton getBtnCarreras() {
+        return btnCarreras;
+    }
+
+    public javax.swing.JButton getBtnBeneficios() {
+        return btnBeneficios;
+    }
+
+    public javax.swing.JButton getBtnAsignarBeneficios() {
+        return btnAsignarBeneficios;
+    }
+
+    public javax.swing.JButton getBtnPagosMensuales() {
+        return btnPagosMensuales;
+    }
+
+    public javax.swing.JMenuItem getMniEstudiantes() {
+        return mniEstudiantes;
+    }
+
+    public javax.swing.JMenuItem getMniCarreras() {
+        return mniCarreras;
+    }
+
+    public javax.swing.JMenuItem getMniBeneficios() {
+        return mniBeneficios;
+    }
+
+    public javax.swing.JMenuItem getMniAsignarBeneficios() {
+        return mniAsignarBeneficios;
+    }
+
+    public javax.swing.JMenuItem getMniPagosMensuales() {
+        return mniPagosMensuales;
+    }
+
+    public javax.swing.JMenuItem getMniSalir() {
+        return mniSalir;
+    }
 }

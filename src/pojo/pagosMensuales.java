@@ -8,34 +8,46 @@ import java.time.LocalDate;
  * Clase que gestiona el registro y calculo de los pagos mensuales a estudiantes con beneficios.
  */
 public class pagosMensuales {
-     private int idPago ;
+     private int idPago;
      private LocalDate fechCreacion;
      private String mes;
+     private LocalDate fechPago;
      private int estudiante; // cedula del estudiante (FK hacia estudiantes)
      private double totalBeneficios;
      private double deducSeguro; // 10 % de totalBeneficio
      private double deducRenta; // 5 % de totalBeneficio
      private double pagoNeto; // totalBeneficio - (deducSeguro + deducRenta)
 
-    public pagosMensuales(int idPago, LocalDate fechCreacion, String mes, int estudiante, double totalBeneficios, double deducSeguro, double deducRenta, double pagoNeto) {
+    public pagosMensuales(int idPago, LocalDate fechCreacion, String mes, LocalDate fechPago, int estudiante, double totalBeneficios, double deducSeguro, double deducRenta, double pagoNeto) {
         this.idPago = idPago;
         this.fechCreacion = fechCreacion;
         this.mes = mes;
+        this.fechPago = fechPago;
         this.estudiante = estudiante;
         this.totalBeneficios = totalBeneficios;
         this.deducSeguro = deducSeguro;
         this.deducRenta = deducRenta;
         this.pagoNeto = pagoNeto;
     }
-      public pagosMensuales() {
+
+    public pagosMensuales() {
         this.idPago = 0;
         this.fechCreacion = null;
         this.mes = "";
+        this.fechPago = null;
         this.estudiante = 0;
         this.totalBeneficios = 0.0;
         this.deducSeguro = 0.0;
         this.deducRenta = 0.0;
         this.pagoNeto = 0.0;
+    }
+
+    public LocalDate getFechPago() {
+        return fechPago;
+    }
+
+    public void setFechPago(LocalDate fechPago) {
+        this.fechPago = fechPago;
     }
 
     public int getIdPago() {

@@ -72,12 +72,12 @@
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtIdCarrera1" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                      <Component id="txtMonto" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="411" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtIdCarrera" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                      <Component id="txtIdBeneficio" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="btnLimpiar" min="-2" max="-2" attributes="0"/>
@@ -86,7 +86,7 @@
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="btnCancelar1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="txtNomCarrera" alignment="0" min="-2" pref="411" max="-2" attributes="0"/>
+                      <Component id="txtNombreBeneficio" alignment="0" min="-2" pref="411" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -99,11 +99,11 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtIdCarrera" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtIdBeneficio" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtNomCarrera" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombreBeneficio" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -111,7 +111,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtIdCarrera1" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtMonto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="33" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnLimpiar" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
@@ -138,14 +138,14 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="238" max="32767" attributes="0"/>
-                      <Component id="lblIconUTN1" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblUTN" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="lblIconUTN1" min="-2" pref="68" max="-2" attributes="0"/>
+                      <Component id="lblUTN" min="-2" pref="68" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -168,7 +168,7 @@
                 <Property name="text" type="java.lang.String" value="Datos del beneficio "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblIconUTN1">
+            <Component class="javax.swing.JLabel" name="lblUTN">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/img/UTNIcon.png"/>
@@ -188,7 +188,7 @@
             <Property name="text" type="java.lang.String" value="ID beneficio"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtIdCarrera">
+        <Component class="javax.swing.JTextField" name="txtIdBeneficio">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -202,10 +202,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdCarreraActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdBeneficioActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtNomCarrera">
+        <Component class="javax.swing.JTextField" name="txtNombreBeneficio">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -219,7 +219,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomCarreraActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreBeneficioActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -282,7 +282,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="txtDescripcion">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -320,7 +320,7 @@
             <Property name="text" type="java.lang.String" value="Monto (&#x20a1;)"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtIdCarrera1">
+        <Component class="javax.swing.JTextField" name="txtMonto">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -334,7 +334,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdCarrera1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMontoActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
