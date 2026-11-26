@@ -17,6 +17,32 @@ public class FrmPagosMensualesView extends javax.swing.JFrame {
      */
     public FrmPagosMensualesView() {
         initComponents();
+        configurarControles();
+    }
+
+    private void configurarControles() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Gestión de Pagos Mensuales");
+        txtBuscar.setForeground(new java.awt.Color(0, 0, 0));
+
+        String[] meses = {
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        };
+        int mesActualIdx = java.time.LocalDate.now().getMonthValue() - 1;
+        int anioActual = java.time.LocalDate.now().getYear();
+
+        cmbMesGenerar.setModel(new javax.swing.DefaultComboBoxModel<>(meses));
+        cmbMesGenerar.setSelectedIndex(mesActualIdx);
+
+        cmbMesMostrar.setModel(new javax.swing.DefaultComboBoxModel<>(meses));
+        cmbMesMostrar.setSelectedIndex(mesActualIdx);
+
+        spnAnioGenerar.setModel(new javax.swing.SpinnerNumberModel(anioActual, 2020, 2040, 1));
+        spnAnioGenerar.setEditor(new javax.swing.JSpinner.NumberEditor(spnAnioGenerar, "#"));
+
+        spnAnioMostrar.setModel(new javax.swing.SpinnerNumberModel(anioActual, 2020, 2040, 1));
+        spnAnioMostrar.setEditor(new javax.swing.JSpinner.NumberEditor(spnAnioMostrar, "#"));
     }
 
     /**
@@ -39,7 +65,7 @@ public class FrmPagosMensualesView extends javax.swing.JFrame {
         cmbMesGenerar = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         spnAnioGenerar = new javax.swing.JSpinner();
-        jButton1 = new javax.swing.JButton();
+        btnGenerar = new javax.swing.JButton();
         pnlMostrarPagos = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -124,11 +150,11 @@ public class FrmPagosMensualesView extends javax.swing.JFrame {
 
         spnAnioGenerar.setModel(new javax.swing.SpinnerDateModel());
 
-        jButton1.setBackground(new java.awt.Color(23, 104, 106));
-        jButton1.setFont(new java.awt.Font("Noto Sans Medium", 0, 13)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Generar");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        btnGenerar.setBackground(new java.awt.Color(23, 104, 106));
+        btnGenerar.setFont(new java.awt.Font("Noto Sans Medium", 0, 13)); // NOI18N
+        btnGenerar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGenerar.setText("Generar");
+        btnGenerar.addActionListener(this::btnGenerarActionPerformed);
 
         javax.swing.GroupLayout plnGenerarPagoLayout = new javax.swing.GroupLayout(plnGenerarPago);
         plnGenerarPago.setLayout(plnGenerarPagoLayout);
@@ -151,7 +177,7 @@ public class FrmPagosMensualesView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(spnAnioGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnGenerar)
                 .addGap(22, 22, 22))
         );
         plnGenerarPagoLayout.setVerticalGroup(
@@ -168,7 +194,7 @@ public class FrmPagosMensualesView extends javax.swing.JFrame {
                     .addComponent(cmbMesGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(spnAnioGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 45, Short.MAX_VALUE))
         );
 
@@ -401,9 +427,9 @@ public class FrmPagosMensualesView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnGenerarActionPerformed
 
     private void btnMostrarPlantillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarPlantillaActionPerformed
         // TODO add your handling code here:
@@ -447,13 +473,13 @@ public class FrmPagosMensualesView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGenerar;
     private javax.swing.JButton btnMostrarPlantilla;
     private javax.swing.JCheckBox chkAnio;
     private javax.swing.JCheckBox chkEstudiante;
     private javax.swing.JCheckBox chkMes;
     private javax.swing.JComboBox<String> cmbMesGenerar;
     private javax.swing.JComboBox<String> cmbMesMostrar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -479,4 +505,52 @@ public class FrmPagosMensualesView extends javax.swing.JFrame {
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtFechaActual;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JTextField getTxtFechaActual() {
+        return txtFechaActual;
+    }
+
+    public javax.swing.JComboBox<String> getCmbMesGenerar() {
+        return cmbMesGenerar;
+    }
+
+    public javax.swing.JSpinner getSpnAnioGenerar() {
+        return spnAnioGenerar;
+    }
+
+    public javax.swing.JButton getBtnGenerar() {
+        return btnGenerar;
+    }
+
+    public javax.swing.JComboBox<String> getCmbMesMostrar() {
+        return cmbMesMostrar;
+    }
+
+    public javax.swing.JSpinner getSpnAnioMostrar() {
+        return spnAnioMostrar;
+    }
+
+    public javax.swing.JButton getBtnMostrarPlantilla() {
+        return btnMostrarPlantilla;
+    }
+
+    public javax.swing.JCheckBox getChkEstudiante() {
+        return chkEstudiante;
+    }
+
+    public javax.swing.JCheckBox getChkMes() {
+        return chkMes;
+    }
+
+    public javax.swing.JCheckBox getChkAnio() {
+        return chkAnio;
+    }
+
+    public javax.swing.JTextField getTxtBuscar() {
+        return txtBuscar;
+    }
+
+    public javax.swing.JTable getTblPagos() {
+        return tblPagos;
+    }
 }

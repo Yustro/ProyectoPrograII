@@ -61,6 +61,9 @@ public class estudiante extends persona{
         this.idCarrera = idCarrera;
     }
 
-  
+    @Override
+    public String toString() {
+        return getCedula() + " - " + getNombre() + " (" + carnet + ")";
+    }
     
 }

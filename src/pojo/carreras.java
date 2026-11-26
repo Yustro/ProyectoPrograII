@@ -48,5 +48,10 @@ public class carreras {
     public void setGrado(String grado) {
         this.grado = grado;
     }
+
+    @Override
+    public String toString() {
+        return idCarrera + " - " + nomCarrera + " (" + grado + ")";
+    }
     
 }

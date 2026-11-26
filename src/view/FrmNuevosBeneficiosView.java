@@ -17,6 +17,7 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
      */
     public FrmNuevosBeneficiosView() {
         initComponents();
+        setTitle("Datos del Beneficio");
     }
 
     /**
@@ -33,19 +34,19 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        lblIconUTN1 = new javax.swing.JLabel();
+        lblUTN = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtIdCarrera = new javax.swing.JTextField();
-        txtNomCarrera = new javax.swing.JTextField();
+        txtIdBeneficio = new javax.swing.JTextField();
+        txtNombreBeneficio = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnCancelar1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtDescripcion = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtIdCarrera1 = new javax.swing.JTextField();
+        txtMonto = new javax.swing.JTextField();
 
         lblIconUTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/UTNIcon.png"))); // NOI18N
 
@@ -65,7 +66,7 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(36, 55, 59));
         jLabel1.setText("Datos del beneficio ");
 
-        lblIconUTN1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/UTNIcon.png"))); // NOI18N
+        lblUTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/UTNIcon.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -75,12 +76,12 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, Short.MAX_VALUE)
-                .addComponent(lblIconUTN1))
+                .addComponent(lblUTN))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(lblIconUTN1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblUTN, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -92,13 +93,13 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("ID beneficio");
 
-        txtIdCarrera.setBackground(new java.awt.Color(255, 255, 255));
-        txtIdCarrera.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
-        txtIdCarrera.addActionListener(this::txtIdCarreraActionPerformed);
+        txtIdBeneficio.setBackground(new java.awt.Color(255, 255, 255));
+        txtIdBeneficio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+        txtIdBeneficio.addActionListener(this::txtIdBeneficioActionPerformed);
 
-        txtNomCarrera.setBackground(new java.awt.Color(255, 255, 255));
-        txtNomCarrera.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
-        txtNomCarrera.addActionListener(this::txtNomCarreraActionPerformed);
+        txtNombreBeneficio.setBackground(new java.awt.Color(255, 255, 255));
+        txtNombreBeneficio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+        txtNombreBeneficio.addActionListener(this::txtNombreBeneficioActionPerformed);
 
         jLabel3.setFont(new java.awt.Font("Noto Sans Medium", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -120,13 +121,13 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
         btnCancelar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelarIcon.png"))); // NOI18N
         btnCancelar1.setText("Cancelar");
 
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtDescripcion.setBackground(new java.awt.Color(255, 255, 255));
+        txtDescripcion.setColumns(20);
+        txtDescripcion.setForeground(new java.awt.Color(0, 0, 0));
+        txtDescripcion.setLineWrap(true);
+        txtDescripcion.setRows(5);
+        txtDescripcion.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(txtDescripcion);
 
         jLabel4.setFont(new java.awt.Font("Noto Sans Medium", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -136,9 +137,9 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Monto (₡)");
 
-        txtIdCarrera1.setBackground(new java.awt.Color(255, 255, 255));
-        txtIdCarrera1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
-        txtIdCarrera1.addActionListener(this::txtIdCarrera1ActionPerformed);
+        txtMonto.setBackground(new java.awt.Color(255, 255, 255));
+        txtMonto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+        txtMonto.addActionListener(this::txtMontoActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -149,12 +150,12 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(txtIdCarrera1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
-                    .addComponent(txtIdCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdBeneficio, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(btnLimpiar)
@@ -162,7 +163,7 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
                         .addComponent(btnGuardar)
                         .addGap(27, 27, 27)
                         .addComponent(btnCancelar1))
-                    .addComponent(txtNomCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombreBeneficio, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -172,11 +173,11 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtIdBeneficio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombreBeneficio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -184,7 +185,7 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdCarrera1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,21 +208,21 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIdCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdCarreraActionPerformed
+    private void txtIdBeneficioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdBeneficioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdCarreraActionPerformed
+    }//GEN-LAST:event_txtIdBeneficioActionPerformed
 
-    private void txtNomCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomCarreraActionPerformed
+    private void txtNombreBeneficioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreBeneficioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomCarreraActionPerformed
+    }//GEN-LAST:event_txtNombreBeneficioActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void txtIdCarrera1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdCarrera1ActionPerformed
+    private void txtMontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdCarrera1ActionPerformed
+    }//GEN-LAST:event_txtMontoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,11 +262,39 @@ public class FrmNuevosBeneficiosView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblIconUTN;
-    private javax.swing.JLabel lblIconUTN1;
-    private javax.swing.JTextField txtIdCarrera;
-    private javax.swing.JTextField txtIdCarrera1;
-    private javax.swing.JTextField txtNomCarrera;
+    private javax.swing.JLabel lblUTN;
+    private javax.swing.JTextArea txtDescripcion;
+    private javax.swing.JTextField txtIdBeneficio;
+    private javax.swing.JTextField txtMonto;
+    private javax.swing.JTextField txtNombreBeneficio;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JTextField getTxtIdBeneficio() {
+        return txtIdBeneficio;
+    }
+
+    public javax.swing.JTextField getTxtNombreBeneficio() {
+        return txtNombreBeneficio;
+    }
+
+    public javax.swing.JTextArea getTxtDescripcion() {
+        return txtDescripcion;
+    }
+
+    public javax.swing.JTextField getTxtMonto() {
+        return txtMonto;
+    }
+
+    public javax.swing.JButton getBtnLimpiar() {
+        return btnLimpiar;
+    }
+
+    public javax.swing.JButton getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public javax.swing.JButton getBtnCancelar() {
+        return btnCancelar1;
+    }
 }
