@@ -33,28 +33,24 @@ public class EstudianteController implements ActionListener, KeyListener {
     private final CarrerasModel carrerasModel;
     private final FrmEstudianteView vista;
     private final FrmNuevoEstudianteView formulario;
-    private final BeneficioEstudianteController beneficioEstController;
     private int operacion = 1; // 1 = Insertar, 2 = Modificar
 
     /**
-     * Constructor que conecta modelos, vistas y el controlador de beneficios estudiantiles.
+     * Constructor que conecta modelos y vistas del módulo de Estudiantes.
      *
      * @param est instancia POJO de estudiante
      * @param model modelo de acceso a datos EstudiantesModel
      * @param carrerasModel modelo de carreras para llenar el JComboBox
      * @param vista diálogo principal de listado y búsqueda
      * @param formulario ventana de registro y edición
-     * @param beneficioEstController controlador para abrir beneficios del estudiante seleccionado
      */
     public EstudianteController(estudiante est, EstudiantesModel model, CarrerasModel carrerasModel,
-            FrmEstudianteView vista, FrmNuevoEstudianteView formulario,
-            BeneficioEstudianteController beneficioEstController) {
+            FrmEstudianteView vista, FrmNuevoEstudianteView formulario) {
         this.est = est;
         this.model = model;
         this.carrerasModel = carrerasModel;
         this.vista = vista;
         this.formulario = formulario;
-        this.beneficioEstController = beneficioEstController;
 
         configurarMascaraTelefono();
 
@@ -265,8 +261,10 @@ public class EstudianteController implements ActionListener, KeyListener {
                     "Aviso", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        int cedula = Integer.parseInt(vista.tblEstudiantes.getValueAt(fila, 1).toString());
-        beneficioEstController.abrirParaEstudiante(cedula, vista);
+        // TODO (Compañero - Daniel): Conectar aquí con BeneficioEstudianteController pasando la cédula seleccionada
+        JOptionPane.showMessageDialog(vista,
+                "Módulo Asignar Beneficios pendiente de implementación.",
+                "Información", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void guardarEstudiante() {

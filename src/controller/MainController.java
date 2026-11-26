@@ -3,28 +3,21 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import model.BeneficiosEstudiantilesModel;
-import model.BeneficiosModel;
 import model.CarrerasModel;
 import model.EstudiantesModel;
 import model.PagosMensualesModel;
-import pojo.beneficios;
 import pojo.carreras;
 import pojo.estudiante;
-import view.DlgAsignarBeneficios;
 import view.DlgPlanillasView;
-import view.FrmBeneficiosView;
 import view.FrmCarreraView;
 import view.FrmEstudianteView;
 import view.FrmNuevaCarreraView;
 import view.FrmNuevoEstudianteView;
-import view.FrmNuevosBeneficiosView;
 import view.FrmPagosMensualesView;
 import view.FrmPrincipalView;
 
 /**
- * Controlador principal del sistema que coordina todos los módulos desde FrmPrincipalView,
- * enlazando tanto los botones principales como la barra de menú secundaria (JMenuBar).
+ * Controlador principal del sistema que coordina los módulos desde FrmPrincipalView.
  *
  * @author jeremydevon
  */
@@ -33,13 +26,11 @@ public class MainController implements ActionListener {
     private final FrmPrincipalView frmPrincipal;
 
     private final CarrerasController carrerasController;
-    private final BeneficiosController beneficiosController;
-    private final BeneficioEstudianteController beneficioEstudianteController;
     private final EstudianteController estudianteController;
     private final PagosMensualesController pagosMensualesController;
-
+ 
     /**
-     * Inicializa todos los modelos, vistas y controladores secundarios del sistema MVC.
+     * Inicializa los modelos, vistas y controladores activos del sistema MVC.
      *
      * @param frmPrincipal ventana principal JFrame de la aplicación
      */
@@ -48,24 +39,16 @@ public class MainController implements ActionListener {
 
         // Instancias POJO
         carreras pojoCarrera = new carreras();
-        beneficios pojoBeneficio = new beneficios();
         estudiante pojoEstudiante = new estudiante();
 
-        // Instancias Model
+        // Instancias Model (Carreras, Estudiantes y Pagos Mensuales)
         CarrerasModel carrerasModel = new CarrerasModel();
-        BeneficiosModel beneficiosModel = new BeneficiosModel();
         EstudiantesModel estudiantesModel = new EstudiantesModel();
-        BeneficiosEstudiantilesModel benEstModel = new BeneficiosEstudiantilesModel();
         PagosMensualesModel pagosModel = new PagosMensualesModel();
 
         // Instancias View
         FrmCarreraView frmCarreras = new FrmCarreraView(frmPrincipal, true);
         FrmNuevaCarreraView frmNuevaCarrera = new FrmNuevaCarreraView();
-
-        FrmBeneficiosView frmBeneficios = new FrmBeneficiosView(frmPrincipal, true);
-        FrmNuevosBeneficiosView frmNuevoBeneficio = new FrmNuevosBeneficiosView();
-
-        DlgAsignarBeneficios dlgAsignar = new DlgAsignarBeneficios(frmPrincipal, true);
 
         FrmEstudianteView frmEstudiantes = new FrmEstudianteView(frmPrincipal, true);
         FrmNuevoEstudianteView frmNuevoEstudiante = new FrmNuevoEstudianteView();
@@ -76,13 +59,9 @@ public class MainController implements ActionListener {
         // Instancias Controller
         this.carrerasController = new CarrerasController(
                 pojoCarrera, carrerasModel, frmCarreras, frmNuevaCarrera);
-        this.beneficiosController = new BeneficiosController(
-                pojoBeneficio, beneficiosModel, frmBeneficios, frmNuevoBeneficio);
-        this.beneficioEstudianteController = new BeneficioEstudianteController(
-                benEstModel, estudiantesModel, beneficiosModel, dlgAsignar);
         this.estudianteController = new EstudianteController(
                 pojoEstudiante, estudiantesModel, carrerasModel,
-                frmEstudiantes, frmNuevoEstudiante, beneficioEstudianteController);
+                frmEstudiantes, frmNuevoEstudiante);
         this.pagosMensualesController = new PagosMensualesController(
                 pagosModel, frmPagos, dlgPlanilla);
 
@@ -118,12 +97,14 @@ public class MainController implements ActionListener {
             estudianteController.abrirVista(frmPrincipal);
         } else if (src == frmPrincipal.getBtnCarreras() || src == frmPrincipal.getMniCarreras()) {
             carrerasController.abrirVista(frmPrincipal);
-        } else if (src == frmPrincipal.getBtnBeneficios() || src == frmPrincipal.getMniBeneficios()) {
-            beneficiosController.abrirVista(frmPrincipal);
-        } else if (src == frmPrincipal.getBtnAsignarBeneficios() || src == frmPrincipal.getMniAsignarBeneficios()) {
-            beneficioEstudianteController.abrirModoGeneral(frmPrincipal);
         } else if (src == frmPrincipal.getBtnPagosMensuales() || src == frmPrincipal.getMniPagosMensuales()) {
             pagosMensualesController.abrirVista(frmPrincipal);
+        } else if (src == frmPrincipal.getBtnBeneficios() || src == frmPrincipal.getMniBeneficios()) {
+            // TODO (Compañero - Daniel): Abrir vista desde BeneficiosController
+            JOptionPane.showMessageDialog(frmPrincipal, "Módulo de Beneficios pendiente de implementación.");
+        } else if (src == frmPrincipal.getBtnAsignarBeneficios() || src == frmPrincipal.getMniAsignarBeneficios()) {
+            // TODO (Compañero - Daniel): Abrir diálogo desde BeneficioEstudianteController
+            JOptionPane.showMessageDialog(frmPrincipal, "Módulo Asignar Beneficios pendiente de implementación.");
         } else if (src == frmPrincipal.getMniSalir()) {
             int salir = JOptionPane.showConfirmDialog(frmPrincipal,
                     "¿Desea salir del sistema?", "Confirmar salida", JOptionPane.YES_NO_OPTION);
